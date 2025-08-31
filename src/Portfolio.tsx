@@ -507,7 +507,7 @@ const Portfolio = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 bg-black relative">
+      <section id="projects" className="py-20 bg-gray-900 relative">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-blue-400 font-semibold text-sm uppercase tracking-wide">Portfolio</span>
@@ -594,7 +594,7 @@ const Portfolio = () => {
           </div>
           
           <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {skills.map((skill, index) => (
                 <div key={index} className="group">
                   <div className="glass-card p-8 rounded-2xl text-center hover:bg-black/30 hover:-translate-y-3 transition-all duration-500 border border-gray-800 hover:border-blue-400/30 relative overflow-hidden">
@@ -653,7 +653,7 @@ const Portfolio = () => {
                 </div>
                 <h3 className="font-bold text-xl mb-3 text-white">WhatsApp Me</h3>
                 <p className="text-gray-400 mb-4">+254 714 346 619</p>
-                <a href="#" className="text-green-400 font-semibold hover:text-green-300 transition-colors">
+                <a href="whatsapp:+254123456789" className="text-green-400 font-semibold hover:text-green-300 transition-colors">
                   Text Me →
                 </a>
               </div>
@@ -661,7 +661,7 @@ const Portfolio = () => {
 
             {/* Action Buttons - Side by Side */}
             <div className="text-center">
-              <div className="flex flex-row sm:flex-row gap-4 justify-center max-w-md mx-auto">
+              <div className="flex flex-row sm:flex-row gap-3 justify-center max-w-md mx-auto">
                 <button onClick={() => scrollToSection('projects')} className="btn btn-primary flex-1">
                   View My Work
                 </button>
