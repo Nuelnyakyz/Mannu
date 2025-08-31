@@ -507,7 +507,7 @@ const Portfolio = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 bg-gray-900 relative">
+      <section id="projects" className="py-5 bg-gray-900 relative">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-blue-400 font-semibold text-sm uppercase tracking-wide">Portfolio</span>
@@ -585,7 +585,7 @@ const Portfolio = () => {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 bg-gray-900">
+      <section id="skills" className="py-5 bg-gray-900">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-blue-400 font-semibold text-sm uppercase tracking-wide">Skills</span>
@@ -678,7 +678,7 @@ const Portfolio = () => {
       <footer className="bg-black text-white py-12 border-t border-gray-900">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center">
-            <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mb-4">
+            <div onClick={() => scrollToSection('home')} className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mb-4">
               Mannu
             </div>
             <p className="text-gray-200 mb-8 max-w-2xl mx-auto">
