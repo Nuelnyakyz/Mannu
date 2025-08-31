@@ -354,13 +354,13 @@ const Portfolio = () => {
               
               {/* Social Links */}
               <div className="flex justify-center space-x-4 mt-8">
-                <a href="https://github.com/Nuelnyakyz" className="p-3 glass-card rounded-full hover:bg-blue-500/20 hover:text-blue-400 transition-all duration-300 text-gray-500">
-                  <Github size={20} />
+                <a href="https://github.com/Nuelnyakyz" className="p-3 glass-card rounded-full bg-blue-500 hover:bg-blue-500/20 hover:text-blue-300 transition-all duration-300 text-gray-200">
+                  <Github size={20}  />
                 </a>
-                <a href="https://www.linkedin.com/in/emmanuel-nyabicha-411879239/" className="p-3 glass-card rounded-full hover:bg-blue-500/20 hover:text-blue-400 transition-all duration-300 text-gray-500">
+                <a href="https://www.linkedin.com/in/emmanuel-nyabicha-411879239/" className="p-3 glass-card rounded-full hover:bg-blue-500/20 hover:text-blue-400 transition-all duration-300 text-gray-200">
                   <Linkedin size={20} />
                 </a>
-                <a href="#" className="p-3 glass-card rounded-full hover:bg-blue-500/20 hover:text-blue-400 transition-all duration-300 text-gray-500">
+                <a href="#" className="p-3 glass-card rounded-full hover:bg-blue-500/20 hover:text-blue-400 transition-all duration-300 text-gray-200">
                   <Twitter size={20} />
                 </a>
               </div>
@@ -594,7 +594,7 @@ const Portfolio = () => {
           </div>
           
           <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-1">
               {skills.map((skill, index) => (
                 <div key={index} className="group">
                   <div className="glass-card p-8 rounded-2xl text-center hover:bg-black/30 hover:-translate-y-3 transition-all duration-500 border border-gray-800 hover:border-blue-400/30 relative overflow-hidden">
@@ -624,7 +624,7 @@ const Portfolio = () => {
           
           {/* Contact Cards */}
           <div className="max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <div className="grid md:grid-cols-3 gap-3 mb-16">
               <div className="glass-card p-8 rounded-2xl text-center hover:bg-slate-800/30 hover:-translate-y-2 transition-all duration-500 group border border-gray-800">
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                   <Mail size={24} />
