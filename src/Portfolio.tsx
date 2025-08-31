@@ -653,9 +653,15 @@ const Portfolio = () => {
                 </div>
                 <h3 className="font-bold text-xl mb-3 text-white">WhatsApp Me</h3>
                 <p className="text-gray-400 mb-4">+254 714 346 619</p>
-                <a href="whatsapp:+254123456789" className="text-green-400 font-semibold hover:text-green-300 transition-colors">
-                  Text Me →
-                </a>
+                <a 
+                  href="https://wa.me/254714346619" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-green-400 font-semibold hover:text-green-300 transition-colors"
+                >
+  Text Me →
+</a>
+
               </div>
             </div>
 
@@ -687,16 +693,16 @@ const Portfolio = () => {
             
             {/* Social Links */}
             <div className="flex justify-center space-x-6 mb-8">
-              <a href="https://github.com/Nuelnyakyz" className="p-3 glass-card rounded-full hover:bg-blue-500/20 transition-all duration-300 hover:scale-110 text-gray-500 hover:text-blue-400">
+              <a href="https://github.com/Nuelnyakyz" className="p-3 glass-card rounded-full hover:bg-blue-500/20 transition-all duration-300 hover:scale-110 text-gray-200 hover:text-blue-400">
                 <Github size={20} />
               </a>
-              <a href="https://www.linkedin.com/in/emmanuel-nyabicha-411879239/" className="p-3 glass-card rounded-full hover:bg-blue-500/20 transition-all duration-300 hover:scale-110 text-gray-500 hover:text-blue-400">
+              <a href="https://www.linkedin.com/in/emmanuel-nyabicha-411879239/" className="p-3 glass-card rounded-full hover:bg-blue-500/20 transition-all duration-300 hover:scale-110 text-gray-200 hover:text-blue-400">
                 <Linkedin size={20} />
               </a>
-              <a href="#" className="p-3 glass-card rounded-full hover:bg-blue-500/20 transition-all duration-300 hover:scale-110 text-gray-500 hover:text-blue-400">
+              <a href="#" className="p-3 glass-card rounded-full hover:bg-blue-500/20 transition-all duration-300 hover:scale-110 text-gray-200 hover:text-blue-400">
                 <Twitter size={20} />
               </a>
-              <a href="#" className="p-3 glass-card rounded-full hover:bg-blue-500/20 transition-all duration-300 hover:scale-110 text-gray-500 hover:text-blue-400">
+              <a href="#" className="p-3 glass-card rounded-full hover:bg-blue-500/20 transition-all duration-300 hover:scale-110 text-gray-200 hover:text-blue-400">
                 <Instagram size={20} />
               </a>
             </div>
