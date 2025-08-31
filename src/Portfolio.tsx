@@ -29,6 +29,14 @@ const Portfolio = () => {
       link: "https://github.com/Nuelnyakyz/CourseIt.git"
     },
     {
+      id: 1,
+      name: "Students' Registration Portal",
+      category: "Backend Development - API",
+      image: "/Portal.png",
+      description: "API Deveopment for a Students' Registration System with GoLang",
+      link: "https://github.com/Nuelnyakyz/306-go-backend.git"
+    },
+    {
       id: 2,
       name: "Android Notes App",
       category: "Mobile Development - Kotlin",
