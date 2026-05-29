@@ -231,6 +231,57 @@ const Portfolio = () => {
             66% { transform: translateX(-15px) translateY(10px); }
           }
           
+          .shooting-star {
+            position: absolute;
+            width: 150px;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,1));
+            border-radius: 50%;
+            opacity: 0;
+            filter: drop-shadow(0 0 6px rgba(255,255,255,1));
+            z-index: 0;
+          }
+
+          .shooting-star::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 4px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 10px 2px rgba(255,255,255,0.8);
+          }
+
+          .star-1 {
+            top: 15%;
+            left: -10%;
+            animation: shoot-1 6s linear infinite;
+          }
+
+          .star-2 {
+            bottom: 20%;
+            right: -10%;
+            animation: shoot-2 7s linear infinite;
+            animation-delay: 3s;
+          }
+
+          @keyframes shoot-1 {
+            0% { transform: rotate(35deg) translateX(0); opacity: 0; }
+            2% { opacity: 1; }
+            15% { transform: rotate(35deg) translateX(800px); opacity: 0; }
+            100% { transform: rotate(35deg) translateX(800px); opacity: 0; }
+          }
+
+          @keyframes shoot-2 {
+            0% { transform: rotate(-145deg) translateX(0); opacity: 0; }
+            2% { opacity: 1; }
+            15% { transform: rotate(-145deg) translateX(800px); opacity: 0; }
+            100% { transform: rotate(-145deg) translateX(800px); opacity: 0; }
+          }
+
           .glass-card {
             background: rgba(0, 0, 0, 0.4);
             backdrop-filter: blur(10px);
@@ -345,8 +396,10 @@ const Portfolio = () => {
       </header>
 
       {/* Hero Section */}
-      <section id="home" className="pt-20 pb-20 galaxy-bg min-h-screen flex items-center relative">
+      <section id="home" className="pt-20 pb-20 galaxy-bg min-h-screen flex items-center relative overflow-hidden">
         <div className="cloud-pattern"></div>
+        <div className="shooting-star star-1"></div>
+        <div className="shooting-star star-2"></div>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full relative z-10">
           <div className="flex flex-col items-center justify-center text-center">
             {/* Text Content */}
@@ -419,29 +472,29 @@ const Portfolio = () => {
               
               {/* Left Column: Text & Skills */}
               <div className="lg:col-span-7">
-                <div className="text-lg text-gray-400 mb-10 leading-relaxed">
+                <div className="text-lg text-gray-400 mb-10 leading-relaxed text-justify hyphens-auto" style={{ WebkitHyphens: 'auto', msHyphens: 'auto' }}>
                   <p>
-                    I'm a passionate software developer specializing in Python and Django. I build robust APIs, scalable backend systems, and have a growing expertise in machine learning and AI. I enjoy solving complex problems and creating efficient, maintainable code.
+                    I'm a full-stack software developer with expertise in building robust, production-ready applications. My experience spans across modern backend frameworks like Django, FastAPI, Laravel, and PHP, combined with React for dynamic user interfaces. From crafting scalable APIs and cloud-connected IoT systems to integrating secure payment gateways and AI-powered solutions, I enjoy solving complex real-world problems through efficient, maintainable code.
                   </p>
                 </div>
                 
-                <h3 className="text-xl font-bold mb-6 text-white">Core Competencies</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="glass-card p-5 rounded-xl border border-gray-800 hover:border-blue-500/30 hover:bg-black/30 transition-all duration-300">
-                    <h4 className="text-white font-bold mb-2 flex items-center"><span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>Backend & APIs</h4>
-                    <p className="text-gray-400 text-sm">Designing scalable RESTful APIs and robust system architectures.</p>
+                <h3 className="text-xl font-bold mb-4 sm:mb-6 text-white text-center sm:text-left">Core Competencies</h3>
+                <div className="grid grid-cols-2 gap-2 sm:gap-3">
+                  <div className="glass-card p-5 sm:p-5 rounded-xl border border-gray-800 hover:border-blue-500/30 hover:bg-black/30 transition-all duration-300 flex flex-col justify-center">
+                    <h4 className="text-white font-bold mb-0 sm:mb-2 flex items-center justify-center sm:justify-start text-sm sm:text-base leading-tight"><span className="w-2 h-2 bg-blue-400 rounded-full mr-2 flex-shrink-0"></span>Backend & APIs</h4>
+                    <p className="text-gray-400 text-xs sm:text-sm leading-relaxed hidden sm:block">Designing scalable RESTful APIs and robust system architectures.</p>
                   </div>
-                  <div className="glass-card p-5 rounded-xl border border-gray-800 hover:border-purple-500/30 hover:bg-black/30 transition-all duration-300">
-                    <h4 className="text-white font-bold mb-2 flex items-center"><span className="w-2 h-2 bg-purple-400 rounded-full mr-2"></span>Payment Integrations</h4>
-                    <p className="text-gray-400 text-sm">Seamlessly connecting platforms to M-Pesa, Airtel Money, and card gateways.</p>
+                  <div className="glass-card p-5 sm:p-5 rounded-xl border border-gray-800 hover:border-purple-500/30 hover:bg-black/30 transition-all duration-300 flex flex-col justify-center">
+                    <h4 className="text-white font-bold mb-0 sm:mb-2 flex items-center justify-center sm:justify-start text-sm sm:text-base leading-tight"><span className="w-2 h-2 bg-purple-400 rounded-full mr-2 flex-shrink-0"></span>Payment APIs</h4>
+                    <p className="text-gray-400 text-xs sm:text-sm leading-relaxed hidden sm:block">Connecting platforms to M-Pesa, Airtel Money, and card gateways.</p>
                   </div>
-                  <div className="glass-card p-5 rounded-xl border border-gray-800 hover:border-green-500/30 hover:bg-black/30 transition-all duration-300">
-                    <h4 className="text-white font-bold mb-2 flex items-center"><span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>IoT & Hardware</h4>
-                    <p className="text-gray-400 text-sm">Building cloud-connected applications for real-time sensor data tracking.</p>
+                  <div className="glass-card p-5 sm:p-5 rounded-xl border border-gray-800 hover:border-green-500/30 hover:bg-black/30 transition-all duration-300 flex flex-col justify-center">
+                    <h4 className="text-white font-bold mb-0 sm:mb-2 flex items-center justify-center sm:justify-start text-sm sm:text-base leading-tight"><span className="w-2 h-2 bg-green-400 rounded-full mr-2 flex-shrink-0"></span>IoT & Hardware</h4>
+                    <p className="text-gray-400 text-xs sm:text-sm leading-relaxed hidden sm:block">Building cloud-connected applications for real-time sensor tracking.</p>
                   </div>
-                  <div className="glass-card p-5 rounded-xl border border-gray-800 hover:border-yellow-500/30 hover:bg-black/30 transition-all duration-300">
-                    <h4 className="text-white font-bold mb-2 flex items-center"><span className="w-2 h-2 bg-yellow-400 rounded-full mr-2"></span>AI & Automation</h4>
-                    <p className="text-gray-400 text-sm">Implementing machine learning models for anomaly detection and NLP.</p>
+                  <div className="glass-card p-5 sm:p-5 rounded-xl border border-gray-800 hover:border-yellow-500/30 hover:bg-black/30 transition-all duration-300 flex flex-col justify-center">
+                    <h4 className="text-white font-bold mb-0 sm:mb-2 flex items-center justify-center sm:justify-start text-sm sm:text-base leading-tight"><span className="w-2 h-2 bg-yellow-400 rounded-full mr-2 flex-shrink-0"></span>AI & Automation</h4>
+                    <p className="text-gray-400 text-xs sm:text-sm leading-relaxed hidden sm:block">Implementing machine learning models and anomaly detection.</p>
                   </div>
                 </div>
               </div>
