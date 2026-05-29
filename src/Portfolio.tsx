@@ -824,7 +824,7 @@ const Portfolio = () => {
           <div className="max-w-5xl mx-auto">
             <div className="grid md:grid-cols-3 gap-3 mb-16">
               <div className="glass-card p-8 rounded-2xl text-center hover:bg-slate-800/30 hover:-translate-y-2 transition-all duration-500 group border border-gray-800">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                   <FaEnvelope size={24} />
                 </div>
                 <h3 className="font-bold text-xl mb-3 text-white">Email Me</h3>
@@ -835,7 +835,7 @@ const Portfolio = () => {
               </div>
               
               <div className="glass-card p-8 rounded-2xl text-center hover:bg-slate-800/30 hover:-translate-y-2 transition-all duration-500 group border border-gray-800">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                   <FaPhoneAlt size={24} />
                 </div>
                 <h3 className="font-bold text-xl mb-3 text-white">Call Me</h3>
@@ -846,7 +846,7 @@ const Portfolio = () => {
               </div>
               
               <div className="glass-card p-8 rounded-2xl text-center hover:bg-slate-800/30 hover:-translate-y-2 transition-all duration-500 group border border-gray-800">
-                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 text-white rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                   <FaWhatsapp size={24} />
                 </div>
                 <h3 className="font-bold text-xl mb-3 text-white">WhatsApp Me</h3>
