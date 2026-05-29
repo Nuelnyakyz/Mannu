@@ -536,28 +536,32 @@ const Portfolio = () => {
                 <div className="mt-4">
                   <h3 className="text-xl font-bold mb-4 text-white">Professional Memberships</h3>
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="glass-card p-4 rounded-xl hover:bg-black/30 transition-all duration-300 border border-gray-800 text-center">
-                      <div className="w-full h-12 bg-white rounded-lg flex items-center justify-center mb-3 p-1">
+                    <div className="glass-card overflow-hidden hover:bg-black/30 transition-all duration-300 border border-gray-800 text-center flex flex-col">
+                      <div className="w-full h-20 bg-white flex items-center justify-center p-3">
                         <img 
                           src="/IEEE.png" 
                           alt="IEEE Logo" 
                           className="max-h-full max-w-full object-contain"
                         />
                       </div>
-                      <div className="text-orange-400 font-semibold text-sm">IEEE Computer Society</div>
-                      <div className="text-gray-400 text-xs mt-1">KU Chapter</div>
+                      <div className="p-4 flex-grow flex flex-col justify-center">
+                        <div className="text-orange-400 font-semibold text-sm leading-tight">IEEE Computer Society</div>
+                        <div className="text-gray-400 text-xs mt-1">KU Chapter</div>
+                      </div>
                     </div>
                     
-                    <div className="glass-card p-4 rounded-xl hover:bg-black/30 transition-all duration-300 border border-gray-800 text-center">
-                      <div className="w-full h-12 bg-white rounded-lg flex items-center justify-center mb-3 p-1">
+                    <div className="glass-card overflow-hidden hover:bg-black/30 transition-all duration-300 border border-gray-800 text-center flex flex-col">
+                      <div className="w-full h-20 bg-white flex items-center justify-center p-3">
                         <img 
                           src="/AfricasTalking.png" 
                           alt="Africa's Talking Logo" 
                           className="max-h-full max-w-full object-contain"
                         />
                       </div>
-                      <div className="text-orange-400 font-semibold text-sm">Africa's Talking</div>
-                      <div className="text-gray-400 text-xs mt-1">ML & AI Community</div>
+                      <div className="p-4 flex-grow flex flex-col justify-center">
+                        <div className="text-orange-400 font-semibold text-sm leading-tight">Africa's Talking</div>
+                        <div className="text-gray-400 text-xs mt-1">ML & AI Community</div>
+                      </div>
                     </div>
                   </div>
                 </div>
