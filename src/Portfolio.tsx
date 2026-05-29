@@ -415,7 +415,7 @@ const Portfolio = () => {
               <div className="relative inline-block">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full blur-2xl opacity-20 animate-pulse"></div>
                 <img 
-                  src="/profile.png" 
+                  src="/og-profile.jpg" 
                   alt="Nuel - Backend Developer" 
                   className="relative w-100% h-100 mx-auto rounded-full shadow-2xl float-animation object-cover border-4 border-blue-400/30"
                 />
