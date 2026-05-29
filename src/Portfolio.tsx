@@ -416,7 +416,7 @@ const Portfolio = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full blur-2xl opacity-20 animate-pulse"></div>
                 <img 
                   src="/og-profile.jpg" 
-                  alt="Nuel - Backend Developer" 
+                  alt="Nuel - Software Developer" 
                   className="relative w-100% h-100 mx-auto rounded-full shadow-2xl float-animation object-cover border-4 border-blue-400/30"
                 />
               </div>
@@ -889,8 +889,8 @@ const Portfolio = () => {
             <div onClick={() => scrollToSection('home')} className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mb-4">
               Nuel
             </div>
-            <p className="text-gray-200 mb-8 max-w-2xl mx-auto">
-              Backend Developer specializing in Python, Django, and API development. Reach out!
+            <p className="text-gray-400 mb-6 text-sm">
+              Full-Stack Software Developer building robust backend systems, APIs, and AI-powered solutions. Reach out!
             </p>
             
             {/* Social Links */}
