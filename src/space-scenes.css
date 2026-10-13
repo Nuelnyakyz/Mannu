@@ -1,0 +1,288 @@
+/* The observatory's small, hand-drawn universe. */
+:root {
+  --display: 'Space Grotesk', 'Inter', sans-serif;
+  --hand: 'Caveat', 'Segoe Print', cursive;
+}
+.hero h1 { font-size: clamp(48px, 5.6vw, 76px); line-height: 1.12; letter-spacing: -3.2px; }
+h2 { font-size: clamp(34px, 3.5vw, 48px); line-height: 1.17; letter-spacing: -1.8px; }
+.hero h1 em, h2 em { font-family: var(--hand); font-size: 1.17em; font-style: normal; line-height: .95; letter-spacing: -.8px; }
+.project h3 { font-size: 27px; line-height: 1.3; letter-spacing: -.9px; }
+.hand-note { font: 21px/1.2 var(--hand); color: #b3c4d3; letter-spacing: .2px; }
+.section-intro { font-size: 13px; color: var(--muted); margin-top: 17px; max-width: 370px; }
+.orbital-art { width: 110%; margin-left: -3%; opacity: 1; }
+.orbit-center { inset: auto; left: 50%; top: 50%; width: 76px; height: 76px; aspect-ratio: 1; transform: translate(-50%, -50%); display: block; overflow: hidden; padding: 3px; border-color: #a5c9e877; background: #0c1520; box-shadow: 0 0 60px 15px #7da4c01c; }
+.orbit-center img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; object-position: center 32%; filter: saturate(.75); }
+.orbit-label-bottom { bottom: 10%; right: 7%; }
+.little-sun { position: absolute; top: 24%; right: 16%; width: 29px; height: 29px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #ffe4ae, #d89856 60%, #995a32); box-shadow: 0 0 0 6px #efb56b09, 0 0 26px 5px #efb56b33; }
+.little-moon { display: block; width: 28px; height: 28px; border-radius: 50%; position: relative; background: radial-gradient(circle at 30% 28%, #d5dce0, #94a5b1 65%, #485666); box-shadow: inset -8px -3px 8px #08111d99, 0 0 14px #b9d6f215; overflow: hidden; }
+.little-moon i { position: absolute; border-radius: 50%; background: #63758377; box-shadow: inset 1px 1px 2px #33425188; width: 7px; height: 7px; top: 6px; left: 6px; }
+.little-moon i:nth-child(2) { top: 15px; left: 14px; width: 5px; height: 5px; }
+.little-moon i:nth-child(3) { top: 15px; left: 4px; width: 3px; height: 3px; }
+.hero-moon { position: absolute; left: 18%; bottom: 22%; }
+/* A notebook thought, with a touch-friendly way to untangle it. */
+.thought-sketch { border-block: 1px solid #9db7cc2b; padding: 20px 0 17px; background: repeating-linear-gradient(transparent 0 29px, #b9d6f207 29px 30px); }
+.thought-topline { display: flex; flex-direction: column; gap: 8px; }
+.thought-topline .eyebrow { font-size: 9px; }
+.thought-topline .hand-note { align-self: flex-end; transform: rotate(4deg); color: #d7bd98; font-size: 18px; }
+.thought-sketch svg { display: block; width: min(100%, 350px); height: auto; margin: 4px auto; overflow: visible; }
+.brain-silhouette { fill: #0e17204d; stroke: #a3b7c76e; stroke-width: 1.2; stroke-dasharray: 3 3; }
+.brain-scribbles { fill: none; stroke: #b6cddd; stroke-width: 1.35; transition: opacity .6s, transform .6s; transform-origin: center; }
+.brain-middle { fill: none; stroke: #b6cddd40; stroke-width: 1; }
+.brain-ideas { fill: #d9b482; stroke: #b6cddd; stroke-width: 1.2; opacity: 0; transition: opacity .6s; }
+.brain-ideas path { fill: none; }
+.thoughts-clear .brain-scribbles { opacity: 0; transform: scale(.9); }
+.thoughts-clear .brain-ideas { opacity: 1; }
+.thought-bottom { display: flex; justify-content: space-between; align-items: center; gap: 4px 12px; flex-wrap: wrap; }
+.thought-bottom .hand-note { font-size: 18px; }
+.thought-bottom .text-button svg { width: 14px; margin: 0; }
+.about-grid .aside-note { font-family: var(--hand); font-size: 21px; font-style: normal; margin-top: 18px; }
+/* Toolkit: readable instruments, arranged by the job they do. */
+.toolkit-heading { align-items: center; margin-bottom: 36px; }
+.toolkit-companion { display: flex; align-items: center; gap: 10px; padding-right: 35px; }
+.astronaut { width: 112px; height: 130px; flex-shrink: 0; }
+.toolkit-companion .hand-note { max-width: 110px; transform: rotate(-7deg); }
+.skill-groups { gap: 18px; }
+.skill-group { border: 1px solid #b9d6f222; border-radius: 7px; padding: 22px; background: linear-gradient(145deg, #17233099, #0d141ccc); min-width: 0; display: flex; flex-direction: column; }
+.tool-group-heading { display: flex; align-items: center; gap: 12px; }
+.tool-index { color: #8eabbf; font: 10px/1 monospace; }
+.skill-group h3 { font-family: var(--display); font-size: 17px; font-weight: 500; margin: 0; letter-spacing: -.4px; }
+.tool-status { width: 4px; height: 4px; border-radius: 50%; background: #d2b084; margin-left: auto; flex-shrink: 0; }
+.tool-note { font-size: 11px; color: var(--muted); margin-top: 9px; }
+.skill-group ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; margin: 22px 0; }
+.skill-group li { display: flex; gap: 8px; align-items: center; color: #c5d0dc; font: 11px/1.4 'Inter', sans-serif; padding: 7px 0; min-width: 0; }
+.skill-group li svg { width: 17px; height: 17px; flex-shrink: 0; color: #a5c4dd; }
+.tool-connection { display: flex; align-items: center; justify-content: space-between; gap: 12px; border-top: 1px solid #b9d6f21c; padding-top: 14px; margin-top: auto; min-height: 44px; color: var(--accent); font-size: 10px; line-height: 1.6; }
+.tool-connection:hover { color: var(--ink); }
+/* Flight log. The spine stays beside the content at every screen size. */
+.journey-heading { align-items: center; margin-bottom: 35px; }
+.journey-heading h2 { margin: 0; }
+.journey-illustration { display: flex; align-items: center; gap: 16px; padding-right: 36px; }
+.journey-rocket { width: 65px; height: 94px; flex-shrink: 0; }
+.journey-illustration .hand-note { max-width: 140px; transform: rotate(-4deg); }
+.experience-list { position: relative; padding-left: 30px; }
+.experience-list::before { content: ''; position: absolute; left: 5px; top: 30px; bottom: 30px; width: 1px; background: linear-gradient(#b9d6f28c, #b9d6f222); }
+.experience-item { position: relative; grid-template-columns: 205px 1fr; gap: 24px; padding: 26px 0; border-top: 0; border-bottom: 1px solid #b9d6f21c; }
+.experience-item:last-child { border-bottom: 0; }
+.mission-marker { position: absolute; left: -30px; top: 30px; height: 11px; width: 11px; border: 1px solid #9ab8cf; background: #0b111a; border-radius: 50%; display: grid; place-items: center; }
+.mission-marker span { width: 3px; height: 3px; background: #aac5d8; border-radius: 50%; }
+.current-mission .mission-marker { border-color: #dfbb8b; box-shadow: 0 0 15px #dfbb8b22; }
+.current-mission .mission-marker span { background: #dfbb8b; }
+.mission-number { display: block; color: #89a1b5; font: 9px/1.5 monospace; letter-spacing: 1px; margin-bottom: 9px; }
+.experience-date { font-size: 11px; }
+.current-label { display: inline-block; font: 9px/1.5 monospace; color: #ddbd91; margin-top: 13px; }
+.experience-item h3 { font-family: var(--display); font-size: 20px; letter-spacing: -.5px; }
+.experience-item .experience-place { font-size: 12px; margin-top: 4px; }
+.experience-item .mission-copy > p:last-child { font-size: 12px; line-height: 1.8; max-width: 540px; }
+.journey-end { font: 20px/1.4 var(--hand); color: #a4b7c7; padding-left: 30px; margin-top: 20px; }
+.journey-end span { color: #d7b886; font-size: 14px; margin-right: 7px; }
+/* A one-shot encounter with the event horizon; replay is deliberate. */
+.contact-layout { display: grid; grid-template-columns: 1.15fr 1fr; align-items: center; gap: 25px; }
+.contact-section h2 { font-size: clamp(36px, 4.5vw, 60px); }
+.contact-copy > p { font-size: 13px; color: var(--muted); margin-top: 22px; max-width: 380px; }
+.contact-email { font-family: var(--display); font-size: clamp(17px, 2vw, 25px); gap: 9px; letter-spacing: -.5px; }
+.contact-email svg { width: 20px; }
+.black-hole-scene { min-width: 0; width: 100%; max-width: 430px; justify-self: center; }
+.black-hole-stage { position: relative; height: 275px; isolation: isolate; container-type: inline-size; }
+.black-hole-halo { position: absolute; left: 60%; top: 52%; transform: translate(-50%, -50%); width: 165px; height: 165px; border-radius: 50%; background: radial-gradient(circle, #07090e 38%, #dfc1a817 48%, #bb896211 56%, transparent 70%); }
+.event-horizon { position: absolute; left: 60%; top: 52%; transform: translate(-50%, -50%); width: 87px; height: 87px; border-radius: 50%; background: #030407; box-shadow: 0 0 0 1px #efd2b7a6, 0 0 13px 2px #efb78442, inset 0 0 6px #000; z-index: 3; }
+.accretion-disc { position: absolute; width: 65%; height: 64px; left: 27.5%; top: calc(52% - 32px); border: 2px solid #d2ad8b; border-radius: 50%; transform: rotate(-22deg); box-shadow: 0 0 4px #d2ad8b4d, inset 0 0 5px #d2ad8b4d; }
+.disc-back { z-index: 1; border-width: 5px 1px 1px; opacity: .7; }
+.disc-front { z-index: 5; clip-path: inset(48% 0 0); border-bottom-width: 4px; opacity: .9; }
+.black-hole-label { position: absolute; bottom: 22px; left: 0; right: 0; text-align: center; font: 8px/1.5 monospace; letter-spacing: 2px; color: #a5b7c5; }
+.black-hole-coordinate { position: absolute; right: 5%; top: 17%; font: 17px/1 var(--hand); color: #bba88e; }
+.falling-portrait { position: absolute; left: calc(12% - 29px); top: 36px; height: 58px; width: 58px; z-index: 2; transform-origin: 90% 50%; }
+.falling-portrait img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 1px solid #bdd3e47a; filter: saturate(.7); }
+.motion-on .black-hole-falling .falling-portrait { animation: spaghettify 11s .8s cubic-bezier(.35, 0, .65, 1) forwards; }
+.black-hole-gone .falling-portrait { opacity: 0; }
+.black-hole-caption { display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 7px; }
+.black-hole-caption .hand-note { font-size: 20px; text-align: center; }
+.black-hole-caption button { min-height: 44px; }
+.black-hole-caption button:disabled { color: #8e9ead; cursor: default; }
+@keyframes spaghettify {
+  0% { transform: translate(0, 0) rotate(-12deg) scale(1); opacity: 1; }
+  40% { transform: translate(13cqw, 25px) rotate(18deg) scale(1.08, .88); opacity: 1; }
+  74% { transform: translate(28cqw, 55px) rotate(26deg) scale(1.9, .42); opacity: 1; }
+  91% { transform: translate(39cqw, 79px) rotate(28deg) scale(2.3, .15); opacity: .85; }
+  100% { transform: translate(48cqw, 79px) rotate(28deg) scale(.02, .01); opacity: 0; }
+}
+@media (max-width: 1050px) {
+  .hero h1 { font-size: 57px; }
+  .skill-groups { gap: 12px; }
+  .skill-group { padding: 17px; }
+  .skill-group h3 { font-size: 15px; }
+  .skill-group li { font-size: 10px; gap: 6px; }
+  .toolkit-companion { padding-right: 0; }
+  .contact-layout { gap: 12px; }
+}
+@media (max-width: 760px) {
+  .section-shell { width: calc(100% - 40px); }
+  .hero { padding-top: 40px; padding-bottom: 70px; gap: 8px; }
+  .hero h1 { font-size: clamp(34px, 7.7vw, 49px); letter-spacing: -1.7px; }
+  .hero h1 em { font-size: 1.22em; }
+  .hero .eyebrow { margin-bottom: 20px; font-size: 8px; line-height: 1.8; letter-spacing: .9px; }
+  .hero-intro { margin-top: 20px; font-size: 13px; max-width: 370px; }
+  .hero-actions { margin-top: 20px; gap: 20px; }
+  .primary-link { padding: 13px 17px; gap: 19px; }
+  .orbital-art { position: relative; inset: auto; width: min(100%, 320px); height: auto; aspect-ratio: 1.2; margin: 12px auto 0; opacity: 1; z-index: auto; }
+  .orbit-label { display: block; font-size: 6px; letter-spacing: 1.3px; }
+  .orbit-label-top { top: 5%; left: 7%; }
+  .orbit-label-bottom { bottom: 3%; right: 7%; }
+  .orbit-center { width: 54px; height: 54px; padding: 2px; }
+  .little-sun { width: 22px; height: 22px; top: 22%; right: 14%; }
+  .hero-moon { width: 20px; height: 20px; bottom: 24%; left: 15%; }
+  .hero-footnote { font-size: 8px; }
+  .journey-body { padding-left: 17px; }
+  .section-marker::before { left: -20px; }
+  .connected-section { padding-top: 55px; }
+  .journey-body::before { top: 55px; }
+  h2 { font-size: 29px; line-height: 1.2; letter-spacing: -.9px; }
+  h2 em { font-size: 1.25em; }
+  .section-heading { margin-bottom: 27px; }
+  .section-marker { font-size: 8px; letter-spacing: 1.2px; margin-bottom: 15px; }
+  .project h3 { font-size: 23px; letter-spacing: -.6px; }
+  .project-list { gap: 38px; }
+  .project { gap: 20px; }
+  .project-copy>p:not(.eyebrow) { font-size: 12px; }
+  .about-grid h2 { margin-bottom: 20px; }
+  .personal-intro { margin-top: 20px; }
+  .toolkit-heading, .journey-heading { display: flex; gap: 12px; align-items: center; }
+  .section-intro { font-size: 11px; margin-top: 13px; max-width: 210px; }
+  .toolkit-companion { flex-direction: column; gap: 0; padding: 0; width: 77px; flex-shrink: 0; }
+  .astronaut { width: 77px; height: 89px; }
+  .toolkit-companion .hand-note { font-size: 15px; text-align: center; max-width: 77px; }
+  .skill-groups { grid-template-columns: 1fr; gap: 12px; }
+  .skill-group { padding: 17px; min-height: auto; }
+  .skill-group h3 { font-size: 16px; }
+  .skill-group ul { grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 16px 0 13px; gap: 7px 9px; }
+  .skill-group li { font-size: 10px; gap: 6px; padding: 6px 0; }
+  .skill-group li svg { width: 15px; height: 15px; }
+  .tool-note { font-size: 10px; }
+  .tool-connection { font-size: 10px; padding-top: 11px; }
+  .journey-illustration { width: 70px; flex-shrink: 0; padding: 0; }
+  .journey-rocket { width: 55px; height: 80px; }
+  .journey-illustration .hand-note { display: none; }
+  .journey-heading h2 { margin-bottom: 0; }
+  .experience-list { padding-left: 23px; }
+  .experience-item { grid-template-columns: 1fr; gap: 12px; padding: 21px 0; }
+  .mission-marker { left: -23px; top: 26px; }
+  .mission-date { display: flex; gap: 7px 12px; align-items: center; flex-wrap: wrap; }
+  .mission-number { font-size: 8px; margin: 0; }
+  .experience-date { font-size: 9px; }
+  .current-label { font-size: 8px; margin: 0; }
+  .experience-item h3 { font-size: 17px; letter-spacing: -.4px; }
+  .experience-item .experience-place { font-size: 11px; margin-bottom: 7px; }
+  .experience-item .mission-copy>p:last-child { font-size: 12px; line-height: 1.75; }
+  .journey-end { font-size: 18px; padding-left: 23px; }
+  .contact-layout { grid-template-columns: 1fr; gap: 25px; }
+  .contact-section h2 { font-size: 33px; }
+  .contact-copy>p { font-size: 12px; margin-top: 18px; }
+  .contact-email { font-size: clamp(16px, 4.7vw, 22px); margin-top: 24px; }
+  .contact-email svg { width: 16px; }
+  .contact-actions { gap: 4px 18px; margin-top: 14px; }
+  .black-hole-scene { max-width: 340px; }
+  .black-hole-stage { height: 245px; }
+  .black-hole-caption .hand-note { font-size: 19px; }
+  .contact-section { padding-bottom: 50px; }
+}
+@media (max-width: 390px) {
+  .skill-group ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero h1 { font-size: 35px; }
+  .toolkit-companion { width: 57px; }
+  .astronaut { width: 65px; height: 78px; }
+  .toolkit-companion .hand-note { font-size: 14px; }
+  .toolkit-heading h2 { font-size: 26px; }
+  .hero .eyebrow { font-size: 7px; }
+  .hero-footnote>span { max-width: none; }
+  .thought-bottom .hand-note { font-size: 17px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .black-hole-falling .falling-portrait { animation: none; }
+}
+
+/* Alternate the composition without changing the mobile reading order. */
+@media (min-width: 761px) {
+  .project:nth-child(even) { grid-template-columns: 1fr 1.12fr; }
+  .project:nth-child(even) .project-image { grid-column: 2; grid-row: 1; }
+  .project:nth-child(even) .project-copy { grid-column: 1; grid-row: 1; }
+}
+
+/* Meteors sit behind the page and never intercept a tap or obscure controls. */
+.scroll-meteors { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: -1; }
+.scroll-meteor { position: absolute; left: 0; top: 0; width: clamp(55px, 12vw, 130px); height: 1px; background: linear-gradient(90deg, transparent, #c9e4fa); border-radius: 50%; opacity: 0; }
+.scroll-meteor::after { content: ''; position: absolute; right: 0; top: -1px; width: 3px; height: 3px; border-radius: 50%; background: #d7ebfb; box-shadow: 0 0 7px #bedfff; }
+.hero > .shooting-star { animation: hero-meteor 14s 1s linear infinite; }
+.hero > .shooting-star-companion { right: auto; left: 7%; top: 34%; width: 75px; animation-duration: 19s; animation-delay: 4s; }
+.thought-bottom button:disabled { color: #8e9ead; cursor: default; }
+.brain-scribbles { transition-duration: 4s; transition-timing-function: ease-in-out; }
+.brain-ideas { transition-duration: 4.5s; transition-timing-function: ease-in-out; }
+@keyframes hero-meteor {
+  0% { opacity: 0; transform: translate(-95px, -65px) rotate(35deg); }
+  2% { opacity: .7; }
+  13%, 100% { opacity: 0; transform: translate(200px, 140px) rotate(35deg); }
+}
+.motion-off .scroll-meteors, .motion-off .shooting-star { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  .scroll-meteors, .shooting-star { display: none; }
+}
+
+/* The gravity field belongs to both About columns and is always in view. */
+.about-gravity { width: 100%; margin-top: 32px; }
+.about-gravity .gravity-sketch canvas { height: 300px; }
+@media (max-width: 760px) {
+  .about-gravity { margin-top: 24px; }
+  .about-gravity .gravity-sketch canvas { height: 230px; }
+}
+
+/* One hero scene, ordered naturally for phones and paired with copy on desktop. */
+.hero { grid-template-rows: auto auto; align-content: center; row-gap: 0; }
+.hero-copy { grid-column: 1; grid-row: 1; }
+.hero-description { grid-column: 1; grid-row: 2; position: relative; z-index: 2; min-width: 0; }
+.hero > .orbital-art { grid-column: 2; grid-row: 1 / span 2; }
+.community { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.community-logo { display: grid; place-items: center; width: 44px; height: 44px; flex-shrink: 0; border-radius: 50%; overflow: hidden; background: #fff; border: 1px solid #b9d6f236; padding: 5px; }
+.community-logo img { width: 100%; height: 100%; object-fit: contain; }
+.community > span:last-child { line-height: 1.7; }
+.community .muted { display: block; font-size: 10px; }
+.toolkit-cards { min-width: 0; }
+.skill-groups { position: relative; }
+.toolkit-pagination { display: none; }
+@media (max-width: 760px) {
+  .hero { grid-template-rows: auto auto auto; padding-top: 30px; padding-bottom: 85px; }
+  .hero h1 { font-size: clamp(30px, 7.2vw, 40px); letter-spacing: -1.2px; }
+  .hero h1 em { font-size: 1.16em; }
+  .hero > .orbital-art { grid-column: 1; grid-row: 2; width: min(100%, 290px); margin: 22px auto 10px; }
+  .hero-description { grid-column: 1; grid-row: 3; }
+  .hero-intro { margin-top: 10px; }
+  h2, .toolkit-heading h2 { font-size: 25px; letter-spacing: -.7px; }
+  h2 em { font-size: 1.17em; }
+  .project h3 { font-size: 21px; }
+  .contact-section h2 { font-size: 28px; }
+  .experience-item h3 { font-size: 16px; }
+  .journey-heading { align-items: center; }
+  .journey-heading > div:first-child { min-width: 0; }
+  .journey-illustration { width: 78px; flex-direction: column; gap: 3px; align-items: center; }
+  .journey-rocket { width: 43px; height: 62px; }
+  .journey-illustration .hand-note { display: block; max-width: 78px; font-size: 14px; line-height: 1.1; text-align: center; transform: rotate(-3deg); }
+  .skill-groups { display: flex; gap: 12px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: #66849b #101720; padding: 3px 2px 12px; }
+  .skill-group { flex: 0 0 calc(100% - 20px); min-width: 0; scroll-snap-align: start; scroll-snap-stop: always; }
+  .skill-group ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .skill-group li { font-size: 11px; }
+  .skill-group li span { overflow-wrap: anywhere; }
+  .toolkit-pagination { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 5px; }
+  .swipe-hint, .toolkit-count { font: 9px/1.5 monospace; color: var(--muted); }
+  .toolkit-dots { display: flex; }
+  .toolkit-dots button { display: grid; place-items: center; width: 44px; height: 44px; border: 0; background: none; }
+  .toolkit-dots button span { width: 5px; height: 5px; border-radius: 50%; background: #526477; transition: background .2s, transform .2s; }
+  .toolkit-dots button[aria-current] span { background: var(--accent); transform: scale(1.4); }
+  .toolkit-dots button:focus-visible { outline-offset: -5px; }
+  .communities { gap: 17px; }
+}
+@media (max-width: 360px) {
+  .hero h1 { font-size: 29px; }
+  h2, .toolkit-heading h2 { font-size: 23px; }
+  .project h3 { font-size: 20px; }
+  .contact-section h2 { font-size: 26px; }
+  .journey-illustration { width: 68px; }
+  .journey-illustration .hand-note { font-size: 13px; }
+  .toolkit-dots button { width: 40px; }
+}
