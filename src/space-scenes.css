@@ -287,3 +287,18 @@ h2 { font-size: clamp(34px, 3.5vw, 48px); line-height: 1.17; letter-spacing: -1.
   .journey-illustration .hand-note { font-size: 13px; }
   .toolkit-dots button { width: 40px; }
 }
+
+/* Project covers: a real brand mark and clearly labelled concept artwork. */
+.project-role { display: block; color: #d0b68f; font: 10px/1.7 monospace; margin-top: 14px; }
+.project-image-caption { color: #a5b4c4; font: 9px/1.5 monospace; text-align: center; margin-top: 13px; letter-spacing: .4px; }
+.project-image .sanaa-brand { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; aspect-ratio: 1.5; background: #fff; padding: 17px; }
+.project-image .sanaa-brand img { width: 42%; height: auto; aspect-ratio: 273 / 229; object-fit: contain; background: transparent; }
+.sanaa-wordmark { font: 600 clamp(18px, 2.2vw, 29px)/1.2 var(--display); letter-spacing: 1.2px; color: #492715; }
+.project-spesis .project-image, .project-sentinai .project-image { background: linear-gradient(135deg, #14212c, #0b111a); }
+.project-spesis .project-image img, .project-sentinai .project-image img { object-fit: cover; }
+.project-sanaa .project-image { background: linear-gradient(135deg, #28221d, #13151b); }
+@media (max-width: 760px) {
+  .project-image .sanaa-brand { padding: 15px; }
+  .project-image .sanaa-brand img { width: 43%; }
+  .project-role { font-size: 9px; }
+}

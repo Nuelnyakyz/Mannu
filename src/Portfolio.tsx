@@ -9,44 +9,61 @@ import { Astronaut, BlackHole, Moon, Rocket, ShootingStars, ThoughtSketch } from
 
 const projects = [
   {
-    number: '01', name: 'CourseIT LMS', type: 'Full-stack development',
-    headline: 'A place for learning to come together.',
-    description: 'A learning management system built across the frontend and backend with Django.',
-    image: '/LMS.png', imageWidth: 1469, imageHeight: 980, tags: ['Django', 'Web application'],
-    link: 'https://github.com/Nuelnyakyz/CourseIt', visual: 'learning',
-    problem: 'Bringing the experience of managing and accessing learning into a web application.',
-    approach: 'Full-stack development of a learning management system using Django. This project brings the user-facing experience and server-side application together.',
-    focus: 'Connecting the interface to the application behind it.',
+    number: '01', name: 'Sanaa', type: 'Art marketplace & social platform',
+    headline: 'A fairer home for African art.',
+    description: 'A full-stack digital marketplace and social platform helping African artists sell with low commissions, connect with their audience, and grow their creative businesses.',
+    image: '/projects/sanaa-logo.png', imageWidth: 273, imageHeight: 229,
+    imageAlt: 'Sanaa African mask logo', imageCaption: 'Sanaa · Digital art & community',
+    tags: ['React', 'Django', 'Python', 'PostgreSQL', 'M-Pesa Daraja', 'Paystack'],
+    link: 'https://sanaa.art', linkKind: 'live', visual: 'sanaa', role: 'Full-stack development',
+    sections: [
+      { title: 'The problem', text: 'Traditional gallery markups limit what artists earn. Sanaa gives African artists a low-commission route to selling their work, alongside a community built around their creativity.' },
+      { title: 'Marketplace & payments', text: 'Built the React and Django marketplace with PostgreSQL, custom shopping cart and checkout workflows, local M-Pesa STK Push through the Daraja API, and international payments through Paystack.' },
+      { title: 'Community & creator tools', text: 'Integrated Posts, Stories, Reels, and direct messaging, plus creator analytics dashboards tracking views, conversions, and revenue.' },
+    ],
   },
   {
-    number: '02', name: "Students’ Registration Portal", type: 'Backend & API development',
-    headline: 'The system behind the registration.',
-    description: 'A Go backend API for a student registration system, built to support the portal experience.',
-    image: '/Portal.png', imageWidth: 1600, imageHeight: 900, tags: ['Go', 'API development'],
-    link: 'https://github.com/Nuelnyakyz/306-go-backend', visual: 'api',
-    problem: 'Providing the backend application that a student registration portal depends on.',
-    approach: 'API development in Go for a student registration system. My work focused on the backend layer serving the portal.',
-    focus: 'The logic and interfaces behind a user-facing workflow.',
+    number: '02', name: 'SPESIS', type: 'Smart protocol seating intelligence',
+    headline: 'Every guest. The right place.',
+    description: 'An intelligent seating system for high-protocol government and diplomatic events, from guest-list import to contactless check-in and a live seat map.',
+    image: '/projects/spesis-thumbnail.png', imageWidth: 1536, imageHeight: 1024,
+    imageAlt: 'Concept illustration of priority seating rows connected to a digital guest pass', imageCaption: 'Project concept illustration',
+    tags: ['React', 'FastAPI', 'Python', 'PostgreSQL'],
+    link: 'https://github.com/Nuelnyakyz/spesis', linkKind: 'source', visual: 'spesis', role: 'Web application development',
+    sections: [
+      { title: 'The problem', text: 'Government and diplomatic events need seating that respects protocol while remaining manageable for event staff. SPESIS brings guest allocation, check-in, and occupancy into one application.' },
+      { title: 'Intelligent allocation', text: 'Administrators import a CSV guest list. The system parses guests and automatically assigns seats by category—VVIP, VIP, or Regular—and designation, including President, Minister, Diplomat, and MP.' },
+      { title: 'On the day', text: 'Each guest receives a unique QR code for contactless check-in. A live interactive seat map lets staff visualise occupancy and apply seating overrides in real time.' },
+    ],
   },
   {
-    number: '03', name: 'Android Notes App', type: 'Mobile development',
-    headline: 'A thought worth keeping. Even offline.',
-    description: 'An Android notes app with Firestore integration and offline capabilities.',
-    image: '/NotesApp.png', imageWidth: 2000, imageHeight: 1782, tags: ['Kotlin', 'Android', 'Firestore'],
-    link: 'https://github.com/Nuelnyakyz/notesAppV2', visual: 'notes',
-    problem: 'Keeping a notes app useful when an internet connection is unavailable.',
-    approach: 'Built a complete Android notes application in Kotlin, integrating Firestore and offline capabilities.',
-    focus: 'A mobile experience that includes life without a connection.',
+    number: '03', name: 'SentinAI-Ops', type: 'Server monitoring & threat detection',
+    headline: 'A closer watch on your servers.',
+    description: 'A self-hosted intrusion detection and server-health monitoring proof of concept, combining three ML models with real-time alerts and local log processing.',
+    image: '/projects/sentinai-thumbnail.png', imageWidth: 1536, imageHeight: 1024,
+    imageAlt: 'Concept illustration of a protected server with telemetry streams and a flagged anomalous process', imageCaption: 'Project concept illustration',
+    tags: ['Laravel', 'FastAPI', 'Prometheus', 'Loki', 'Isolation Forest', 'NLP'],
+    link: 'https://github.com/Nuelnyakyz/SentinAI-Ops', linkKind: 'source', visual: 'sentinai', role: 'NIRU AI Hackathon · Team project · Jan 2026',
+    sections: [
+      { title: 'The problem', text: 'Detecting suspicious activity quickly while keeping server logs inside the client’s infrastructure. Built as a group project for the NIRU AI Hackathon in January 2026.' },
+      { title: 'Three parallel models', text: 'The metrics model compares live CPU and RAM data from Prometheus against Isolation Forest predictions trained on historical behaviour. Log categorisation uses Loki and NLP similarity scoring for LAMP logs. The user-behaviour model builds a process whitelist and flags unauthorised process spawning, including reverse shells.' },
+      { title: 'Local processing & alerts', text: 'A Laravel frontend and FastAPI backend, an AI chatbot for admin guidance, and Slack, email, and SMS alerts. Docker Compose supports a Zero-Egress architecture: logs remain within the client’s infrastructure.' },
+      { title: 'Staging proof of concept', text: 'Validated on a staging LAMP server using a controlled reverse-shell attack simulation. Detection and alerting completed within the five-second target window.' },
+    ],
   },
   {
     number: '04', name: 'AudioBook Generator', type: 'Python & speech technology',
     headline: 'Give written words a voice.',
     description: 'A Python audiobook generator that turns text into speech using Deepgram’s TTS API.',
-    image: '/AudioBook.png', imageWidth: 259, imageHeight: 194, tags: ['Python', 'Deepgram', 'Text to speech'],
-    link: 'https://github.com/Nuelnyakyz/pdf_reader', visual: 'audio',
-    problem: 'Making written material available as something you can listen to.',
-    approach: 'Connected a Python application to Deepgram’s text-to-speech API to generate audiobook audio.',
-    focus: 'Turning an external speech API into a useful tool.',
+    image: '/AudioBook.png', imageWidth: 259, imageHeight: 194,
+    imageAlt: 'AudioBook Generator project preview', imageCaption: '',
+    tags: ['Python', 'Deepgram', 'Text to speech'],
+    link: 'https://github.com/Nuelnyakyz/pdf_reader', linkKind: 'source', visual: 'audio', role: '',
+    sections: [
+      { title: 'The problem', text: 'Making written material available as something you can listen to.' },
+      { title: 'What I built', text: 'Connected a Python application to Deepgram’s text-to-speech API to generate audiobook audio.' },
+      { title: 'The focus', text: 'Turning an external speech API into a useful tool.' },
+    ],
   },
 ];
 
@@ -57,9 +74,9 @@ const toolIcons: Record<string, IconType> = {
   Supabase: SiSupabase, Docker: FaDocker, Git: FaGitAlt, 'React Native': FaReact, Redis: SiRedis,
 };
 const toolConnections = [
-  { label: 'Behind CourseIT & the registration API', href: '#project-01', note: 'The engines underneath.' },
-  { label: 'Inside the Android Notes App', href: '#project-03', note: 'Where people meet the software.' },
-  { label: 'Explore my repositories', href: 'https://github.com/Nuelnyakyz', note: 'Keeping everything connected.' },
+  { label: 'Behind Sanaa & SPESIS', href: '#project-02', note: 'The engines underneath.' },
+  { label: 'Inside the Sanaa experience', href: '#project-01', note: 'Where people meet the software.' },
+  { label: 'Inside SentinAI-Ops', href: '#project-03', note: 'Keeping everything connected.' },
 ];
 const skills = [
   { name: 'Backend & APIs', tools: ['Go', 'Python', 'Django', 'PHP', 'Laravel', 'Node.js'] },
@@ -317,8 +334,22 @@ export default function Portfolio() {
         <section className="work-section connected-section" id="projects">
           <div className="section-heading"><div><p className="eyebrow section-marker">01 / Selected work</p><h2>Ideas become<br /><em>useful things.</em></h2></div><p>A few problems I’ve explored through code.<br className="desktop-break" /> Here’s what I built along the way.</p></div>
           <div className="project-list">{projects.map(project => <article id={`project-${project.number}`} key={project.number} className={`project project-${project.visual}`}>
-            <div className="project-image"><div className="image-topline"><span>{project.number} / {project.type}</span><span aria-hidden="true">↗</span></div><a href={project.link} target="_blank" rel="noopener noreferrer" aria-label={`View ${project.name} source on GitHub`}><img src={project.image} width={project.imageWidth} height={project.imageHeight} alt={`${project.name} project preview`} loading="lazy" decoding="async" /></a><ProjectSignal type={project.visual} /></div>
-            <div className="project-copy"><p className="eyebrow project-name">{project.name}</p><h3>{project.headline}</h3><p>{project.description}</p><ul className="tech-tags" aria-label="Technologies">{project.tags.map(tag => <li key={tag}>{tag}</li>)}</ul><details className="build-details"><summary>Explore the build <Plus size={17} /></summary><div className="build-notes"><h4>The problem</h4><p>{project.problem}</p><h4>What I built</h4><p>{project.approach}</p><h4>The focus</h4><p>{project.focus}</p></div></details><a className="source-link" href={project.link} target="_blank" rel="noopener noreferrer"><Github size={16} /> View source <ArrowUpRight size={16} /></a></div>
+            <div className="project-image">
+              <div className="image-topline"><span>{project.number} / {project.type}</span><span aria-hidden="true">↗</span></div>
+              <a className={project.visual === 'sanaa' ? 'sanaa-brand' : undefined} href={project.link} target="_blank" rel="noopener noreferrer" aria-label={project.linkKind === 'live' ? `Visit ${project.name}` : `View ${project.name} source on GitHub`}>
+                <img src={project.image} width={project.imageWidth} height={project.imageHeight} alt={project.imageAlt} loading="lazy" decoding="async" />
+                {project.visual === 'sanaa' && <span className="sanaa-wordmark" aria-hidden="true">SANAA.ART</span>}
+              </a>
+              {project.imageCaption && <p className="project-image-caption">{project.imageCaption}</p>}
+              <ProjectSignal type={project.visual} />
+            </div>
+            <div className="project-copy">
+              <p className="eyebrow project-name">{project.name}</p><h3>{project.headline}</h3><p>{project.description}</p>
+              {project.role && <span className="project-role">{project.role}</span>}
+              <ul className="tech-tags" aria-label="Technologies">{project.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>
+              <details className="build-details"><summary>Explore the build <Plus size={17} /></summary><div className="build-notes">{project.sections.map(section => <div key={section.title}><h4>{section.title}</h4><p>{section.text}</p></div>)}</div></details>
+              <a className="source-link" href={project.link} target="_blank" rel="noopener noreferrer">{project.linkKind === 'source' && <Github size={16} />}{project.linkKind === 'live' ? 'Visit sanaa.art' : 'View source'}<ArrowUpRight size={16} /></a>
+            </div>
           </article>)}</div>
           <a className="all-work-link" href="https://github.com/Nuelnyakyz?tab=repositories" target="_blank" rel="noopener noreferrer">More explorations on GitHub <ArrowUpRight size={17} /></a>
         </section>
