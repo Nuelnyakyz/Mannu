@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import type { CSSProperties } from 'react';
-import { ArrowDown, ArrowUpRight, ArrowUp, Github, Linkedin, Instagram, Menu, X, Pause, Play, Plus, Mail, Phone, RotateCcw } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, ArrowUp, Github, Linkedin, Instagram, Menu, X, Plus, Mail, Phone, RotateCcw } from 'lucide-react';
 import { FaXTwitter, FaWhatsapp } from 'react-icons/fa6';
 import { FaPython, FaReact, FaJava, FaNodeJs, FaDocker, FaGitAlt, FaPhp } from 'react-icons/fa';
 import { SiGo, SiDjango, SiTypescript, SiKotlin, SiFlutter, SiLaravel, SiPostgresql, SiMongodb, SiSupabase, SiRedis } from 'react-icons/si';
@@ -98,22 +98,13 @@ const stars = Array.from({ length: 65 }, (_, i) => ({
 
 function useMotion() {
   const [reduced, setReduced] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches);
-  const [paused, setPaused] = useState(() => {
-    try { return localStorage.getItem('nuel-motion-paused') === 'true'; } catch { return false; }
-  });
   useEffect(() => {
     const query = window.matchMedia('(prefers-reduced-motion: reduce)');
     const update = () => setReduced(query.matches);
     query.addEventListener('change', update);
     return () => query.removeEventListener('change', update);
   }, []);
-  function toggle() {
-    setPaused(value => {
-      try { localStorage.setItem('nuel-motion-paused', String(!value)); } catch { /* Storage may be unavailable. */ }
-      return !value;
-    });
-  }
-  return { motion: !reduced && !paused, reduced, toggle };
+  return !reduced;
 }
 
 function OrbitDrawing() {
@@ -259,7 +250,7 @@ function ToolkitCards({ motion }: { motion: boolean }) {
 }
 
 export default function Portfolio() {
-  const { motion, reduced, toggle } = useMotion();
+  const motion = useMotion();
   const [menuOpen, setMenuOpen] = useState(false);
   const pageRef = useRef<HTMLDivElement>(null);
   const menuButton = useRef<HTMLButtonElement>(null);
@@ -313,7 +304,7 @@ export default function Portfolio() {
     <header className="site-header">
       <a className="wordmark" href="#home" aria-label="Nuel, home">nuel<span>.</span></a>
       <nav className="desktop-nav" aria-label="Main navigation"><a href="#projects">Work</a><a href="#about">About</a><a href="#skills">Toolkit</a><a href="#contact">Let’s talk <ArrowUpRight size={14} /></a></nav>
-      <div className="header-actions"><button type="button" className="motion-control" onClick={toggle} disabled={reduced} aria-label={reduced ? 'Motion disabled by your system preference' : motion ? 'Pause animations' : 'Enable animations'} aria-pressed={!motion}>{motion ? <Pause size={13} /> : <Play size={13} />}<span>Motion {motion ? 'on' : 'off'}</span></button><button ref={menuButton} type="button" className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen} aria-controls="mobile-navigation" aria-label={menuOpen ? 'Close navigation' : 'Open navigation'}>{menuOpen ? <X size={22} /> : <Menu size={22} />}</button></div>
+      <div className="header-actions"><button ref={menuButton} type="button" className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen} aria-controls="mobile-navigation" aria-label={menuOpen ? 'Close navigation' : 'Open navigation'}>{menuOpen ? <X size={22} /> : <Menu size={22} />}</button></div>
       <nav id="mobile-navigation" className="mobile-nav" aria-label="Mobile navigation" hidden={!menuOpen}>{[['projects', 'Selected work'], ['about', 'About me'], ['skills', 'Toolkit'], ['contact', 'Let’s talk']].map(([id, label]) => <a key={id} href={`#${id}`} onClick={() => setMenuOpen(false)}>{label}<ArrowUpRight size={18} /></a>)}</nav>
     </header>
     <main id="main">

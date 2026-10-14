@@ -194,7 +194,6 @@ button svg,a svg {
   display: flex;
   gap: 34px;
   margin-left: auto;
-  margin-right: 40px;
   align-items: center;
 }
 
@@ -213,31 +212,9 @@ button svg,a svg {
 }
 
 .header-actions {
-  display: flex;
+  display: none;
   gap: 12px;
   align-items: center;
-}
-
-.motion-control {
-  background: transparent;
-  border: 1px solid var(--line);
-  border-radius: 30px;
-  display: flex;
-  gap: 7px;
-  align-items: center;
-  padding: 9px 12px;
-  font-size: 10px;
-  color: var(--muted);
-  min-height: 36px;
-}
-
-.motion-control:hover {
-  color: var(--ink);
-  border-color: #62778e;
-}
-
-.motion-control:disabled {
-  opacity: .65;
 }
 
 .menu-toggle {
@@ -1271,16 +1248,13 @@ html:has(.motion-off) {
     display: none;
   }
   .header-actions {
+    display: flex;
     margin-left: auto;
     gap: 8px;
   }
   .menu-toggle {
     display: grid;
     place-items: center;
-  }
-  .motion-control {
-    min-height: 44px;
-    padding: 8px 11px;
   }
   .hero {
     grid-template-columns: 1fr;
