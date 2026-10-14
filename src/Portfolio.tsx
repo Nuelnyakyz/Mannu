@@ -302,7 +302,7 @@ export default function Portfolio() {
     <ShootingStars motion={motion} />
     <div className="reading-progress" aria-hidden="true" />
     <header className="site-header">
-      <a className="wordmark" href="#home" aria-label="Nuel, home">nuel<span>.</span></a>
+      <a className="wordmark" href="#home" aria-label="Nuel, home">Nuel<span>.</span></a>
       <nav className="desktop-nav" aria-label="Main navigation"><a href="#projects">Work</a><a href="#about">About</a><a href="#skills">Toolkit</a><a href="#contact">Let’s talk <ArrowUpRight size={14} /></a></nav>
       <div className="header-actions"><button ref={menuButton} type="button" className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen} aria-controls="mobile-navigation" aria-label={menuOpen ? 'Close navigation' : 'Open navigation'}>{menuOpen ? <X size={22} /> : <Menu size={22} />}</button></div>
       <nav id="mobile-navigation" className="mobile-nav" aria-label="Mobile navigation" hidden={!menuOpen}>{[['projects', 'Selected work'], ['about', 'About me'], ['skills', 'Toolkit'], ['contact', 'Let’s talk']].map(([id, label]) => <a key={id} href={`#${id}`} onClick={() => setMenuOpen(false)}>{label}<ArrowUpRight size={18} /></a>)}</nav>
@@ -378,6 +378,6 @@ export default function Portfolio() {
         </section>
       </div>
     </main>
-    <footer className="site-footer section-shell"><div><a className="wordmark" href="#home">nuel<span>.</span></a><p>A small corner of a very big universe.</p></div><div className="footer-right"><div className="social-links"><a href="https://github.com/Nuelnyakyz" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><Github size={18} /></a><a href="https://www.linkedin.com/in/emmanuel-nyabicha-411879239/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Linkedin size={18} /></a><a href="https://x.com/nue1manu" target="_blank" rel="noopener noreferrer" aria-label="X"><FaXTwitter size={17} /></a><a href="https://www.instagram.com/nu_el_n/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram size={18} /></a><a href="#home" aria-label="Back to top"><ArrowUp size={18} /></a></div><p>© {new Date().getFullYear()} Nuel. Made with curiosity.</p></div></footer>
+    <footer className="site-footer section-shell"><div><a className="wordmark" href="#home">Nuel<span>.</span></a><p>A small corner of a very big universe.</p></div><div className="footer-right"><div className="social-links"><a href="https://github.com/Nuelnyakyz" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><Github size={18} /></a><a href="https://www.linkedin.com/in/emmanuel-nyabicha-411879239/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Linkedin size={18} /></a><a href="https://x.com/nue1manu" target="_blank" rel="noopener noreferrer" aria-label="X"><FaXTwitter size={17} /></a><a href="https://www.instagram.com/nu_el_n/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram size={18} /></a><a href="#home" aria-label="Back to top"><ArrowUp size={18} /></a></div><p>© {new Date().getFullYear()} Nuel. Made with curiosity.</p></div></footer>
   </div>;
 }

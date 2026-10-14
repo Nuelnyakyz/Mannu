@@ -256,7 +256,7 @@ button svg,a svg {
   align-items: center;
   min-height: 720px;
   min-height: min(840px,calc(100svh - 72px));
-  padding-top: 95px;
+  padding-top: 40px;
   padding-bottom: 112px;
 }
 
@@ -497,8 +497,20 @@ button svg,a svg {
 }
 
 .connected-section {
+  --section-gap: 120px;
   position: relative;
-  padding-top: 120px;
+  padding-top: var(--section-gap);
+}
+
+.connected-section::before {
+  content: '';
+  position: absolute;
+  top: calc(var(--section-gap) / 2);
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #b9d6f238;
+  pointer-events: none;
 }
 
 .section-marker {
@@ -1316,7 +1328,7 @@ html:has(.motion-off) {
     bottom: 100px;
   }
   .connected-section {
-    padding-top: 70px;
+    --section-gap: 80px;
   }
   .section-marker {
     font-size: 9px;
