@@ -108,6 +108,21 @@ export function Rocket() {
   );
 }
 
+// Two distinct hemispheres and a persistent network of cortical folds keep the
+// illustration recognisable after the temporary scribbles have cleared.
+const leftHemisphere = 'M153 36C146 20 127 20 115 31C99 26 82 37 79 52C61 57 52 75 57 90C43 103 44 123 54 135C47 153 57 173 72 179C76 198 94 211 112 209C122 223 143 222 150 207C156 191 149 176 155 158C149 141 156 127 151 111C156 94 150 78 155 63C151 52 156 44 153 36Z';
+const rightHemisphere = 'M167 36C174 20 193 20 205 31C221 26 238 37 241 52C259 57 268 75 263 90C277 103 276 123 266 135C273 153 263 173 248 179C244 198 226 211 208 209C198 223 177 222 170 207C164 191 171 176 165 158C171 141 164 127 169 111C164 94 170 78 165 63C169 52 164 44 167 36Z';
+const corticalFolds = [
+  'M116 32C109 45 121 57 135 51C145 47 147 59 140 67',
+  'M81 54C92 47 109 52 106 65C103 76 117 84 129 76C139 71 147 79 144 90',
+  'M61 83C74 73 88 82 83 95C78 108 87 119 101 112C113 106 122 114 118 126',
+  'M56 120C65 111 75 119 70 132C68 143 80 149 88 140C99 130 111 137 107 150',
+  'M64 161C78 151 91 158 87 172C84 183 96 192 107 184C117 177 127 183 123 198',
+  'M105 91C121 92 127 101 123 112C119 124 132 132 145 122',
+  'M112 155C125 143 140 148 137 161C133 172 143 182 150 178',
+  'M109 206C108 196 116 189 125 194C134 199 143 194 143 185',
+];
+
 const scribbles = Array.from({ length: 18 }, (_, i) => {
   const n = (offset: number, scale: number) => (Math.sin(i * 13.7 + offset) * 0.5 + 0.5) * scale;
   return `M ${65 + n(1, 170)} ${35 + n(2, 130)} C ${20 + n(3, 270)} ${n(4, 180)}, ${30 + n(5, 260)} ${n(6, 190)}, ${55 + n(7, 185)} ${35 + n(8, 130)} S ${20 + n(9, 280)} ${n(10, 190)}, ${70 + n(11, 150)} ${40 + n(12, 120)}`;
@@ -123,12 +138,14 @@ export function ThoughtSketch({ motion }: { motion: boolean }) {
   return (
     <div ref={root} className={`thought-sketch ${untangled ? 'thoughts-clear' : ''}`}>
       <div className="thought-topline"><span className="eyebrow">Somewhere inside my head</span><span className="hand-note">probably another idea</span></div>
-      <svg viewBox="0 0 320 210" role="img" aria-label={untangled ? 'The tangled thoughts resolve into four connected ideas.' : 'A hand-drawn brain filled with tangled pen strokes.'}>
-        <defs><clipPath id="brain-outline"><path d="M158 34C130 9 101 20 90 40C57 31 38 58 42 80C11 99 21 131 41 140C35 166 64 184 88 177C105 202 138 192 159 178C183 197 215 194 231 176C263 184 286 160 277 139C307 114 290 90 277 80C283 48 254 31 231 38C207 9 178 17 158 34Z" /></clipPath></defs>
-        <path className="brain-silhouette" d="M158 34C130 9 101 20 90 40C57 31 38 58 42 80C11 99 21 131 41 140C35 166 64 184 88 177C105 202 138 192 159 178C183 197 215 194 231 176C263 184 286 160 277 139C307 114 290 90 277 80C283 48 254 31 231 38C207 9 178 17 158 34Z" />
+      <svg className="brain-drawing" viewBox="0 0 320 240" role="img" aria-label={untangled ? 'A brain with two hemispheres and visible folds, with four connected ideas inside.' : 'A brain with two hemispheres, visible folds, and tangled pen strokes inside.'}>
+        <defs><clipPath id="brain-outline"><path d={leftHemisphere} /><path d={rightHemisphere} /></clipPath></defs>
+        <path className="brain-stem" d="M149 201Q148 219 153 231H168Q171 217 170 201" />
+        <path className="brain-silhouette" d={leftHemisphere} />
+        <path className="brain-silhouette" d={rightHemisphere} />
+        <g className="brain-folds">{corticalFolds.map((d, i) => <path key={i} d={d} />)}<g transform="translate(320 0) scale(-1 1)">{corticalFolds.map((d, i) => <path key={i} d={d} />)}</g></g>
         <g className="brain-scribbles" clipPath="url(#brain-outline)">{scribbles.map((d, i) => <path d={d} key={i} style={{ opacity: 0.3 + (i % 4) * 0.16 }} />)}</g>
-        <g className="brain-ideas"><path d="M80 110L158 69L239 117M80 110L158 154L239 117M158 69V154" /><circle cx="80" cy="110" r="7" /><circle cx="158" cy="69" r="7" /><circle cx="239" cy="117" r="7" /><circle cx="158" cy="154" r="5" /></g>
-        <path className="brain-middle" d="M157 35Q146 62 160 84T158 132T159 178" />
+        <g className="brain-ideas"><path d="M97 99Q151 59 216 99M97 99Q111 144 129 167M216 99Q221 143 198 168M129 167Q165 144 198 168M97 99Q156 147 198 168M216 99Q170 127 129 167" /><circle cx="97" cy="99" r="4" /><circle cx="216" cy="99" r="4" /><circle cx="129" cy="167" r="4" /><circle cx="198" cy="168" r="4" /></g>
       </svg>
       <div className="thought-bottom"><span className="hand-note" aria-live="polite">{untangled ? 'one question at a time.' : 'a few too many tabs open.'}</span><button type="button" className="text-button" disabled={motion && !untangled} onClick={() => setUntangled(value => !value)}><RotateCcw size={14} />{untangled ? 'Tangle again' : motion ? 'Finding a little order…' : 'Untangle a thought'}</button></div>
     </div>
