@@ -12,7 +12,7 @@ const projects = [
     number: '01', name: 'Sanaa', type: 'Art marketplace & social platform',
     headline: 'A fairer home for African art.',
     description: 'A full-stack digital marketplace and social platform helping African artists sell with low commissions, connect with their audience, and grow their creative businesses.',
-    image: '/projects/sanaa-logo.png', imageWidth: 273, imageHeight: 229,
+    image: '/projects/sanaa-logo.webp', imageWidth: 273, imageHeight: 229,
     imageAlt: 'Sanaa African mask logo', imageCaption: 'Sanaa · Digital art & community',
     tags: ['React', 'Django', 'Python', 'PostgreSQL', 'M-Pesa Daraja', 'Paystack'],
     link: 'https://sanaa.art', linkKind: 'live', visual: 'sanaa', role: 'Full-stack development',
@@ -26,7 +26,8 @@ const projects = [
     number: '02', name: 'SPESIS', type: 'Smart protocol seating intelligence',
     headline: 'Every guest. The right place.',
     description: 'An intelligent seating system for high-protocol government and diplomatic events, from guest-list import to contactless check-in and a live seat map.',
-    image: '/projects/spesis-thumbnail.png', imageWidth: 1536, imageHeight: 1024,
+    image: '/projects/spesis-thumbnail.webp', imageWidth: 1536, imageHeight: 1024,
+    imageSrcSet: '/projects/spesis-thumbnail-640.webp 640w, /projects/spesis-thumbnail-960.webp 960w, /projects/spesis-thumbnail.webp 1536w',
     imageAlt: 'Concept illustration of priority seating rows connected to a digital guest pass', imageCaption: 'Project concept illustration',
     tags: ['React', 'FastAPI', 'Python', 'PostgreSQL'],
     link: 'https://github.com/Nuelnyakyz/spesis', linkKind: 'source', visual: 'spesis', role: 'Web application development',
@@ -40,7 +41,8 @@ const projects = [
     number: '03', name: 'SentinAI-Ops', type: 'Server monitoring & threat detection',
     headline: 'A closer watch on your servers.',
     description: 'A self-hosted intrusion detection and server-health monitoring proof of concept, combining three ML models with real-time alerts and local log processing.',
-    image: '/projects/sentinai-thumbnail.png', imageWidth: 1536, imageHeight: 1024,
+    image: '/projects/sentinai-thumbnail.webp', imageWidth: 1536, imageHeight: 1024,
+    imageSrcSet: '/projects/sentinai-thumbnail-640.webp 640w, /projects/sentinai-thumbnail-960.webp 960w, /projects/sentinai-thumbnail.webp 1536w',
     imageAlt: 'Concept illustration of a protected server with telemetry streams and a flagged anomalous process', imageCaption: 'Project concept illustration',
     tags: ['Laravel', 'FastAPI', 'Prometheus', 'Loki', 'Isolation Forest', 'NLP'],
     link: 'https://github.com/Nuelnyakyz/SentinAI-Ops', linkKind: 'source', visual: 'sentinai', role: 'NIRU AI Hackathon · Team project · Jan 2026',
@@ -337,7 +339,7 @@ export default function Portfolio() {
             <div className="project-image">
               <div className="image-topline"><span>{project.number} / {project.type}</span><span aria-hidden="true">↗</span></div>
               <a className={project.visual === 'sanaa' ? 'sanaa-brand' : undefined} href={project.link} target="_blank" rel="noopener noreferrer" aria-label={project.linkKind === 'live' ? `Visit ${project.name}` : `View ${project.name} source on GitHub`}>
-                <img src={project.image} width={project.imageWidth} height={project.imageHeight} alt={project.imageAlt} loading="lazy" decoding="async" />
+                <img src={project.image} srcSet={project.imageSrcSet} sizes={project.imageSrcSet ? '(min-width: 1272px) 538px, (min-width: 761px) 44vw, calc(100vw - 80px)' : undefined} width={project.imageWidth} height={project.imageHeight} alt={project.imageAlt} loading="lazy" decoding="async" />
                 {project.visual === 'sanaa' && <span className="sanaa-wordmark" aria-hidden="true">SANAA.ART</span>}
               </a>
               {project.imageCaption && <p className="project-image-caption">{project.imageCaption}</p>}

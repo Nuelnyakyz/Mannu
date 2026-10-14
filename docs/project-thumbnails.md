@@ -1,10 +1,12 @@
 # Project thumbnails
 
-Generated with the built-in `image_gen` tool. These are conceptual illustrations, not screenshots of the applications. Both images are 1536 × 1024 pixels.
+Generated with the built-in `image_gen` tool. These are conceptual illustrations, not screenshots of the applications. The original images were 1536 × 1024 PNGs; the site serves optimized WebP copies.
 
-- SPESIS: `public/projects/spesis-thumbnail.png`
-- SentinAI-Ops: `public/projects/sentinai-thumbnail.png`
-- Sanaa: `public/projects/sanaa-logo.png` uses the existing Sanaa brand asset.
+- SPESIS: `public/projects/spesis-thumbnail.webp`
+- SentinAI-Ops: `public/projects/sentinai-thumbnail.webp`
+- Sanaa: `public/projects/sanaa-logo.webp` uses a lossless copy of the existing Sanaa brand asset.
+
+The concept covers also have `-640.webp` and `-960.webp` variants, selected through `srcSet` and `sizes`. Images retain explicit dimensions and lazy loading. WebP exports use quality 82; the full-size covers are approximately 80 KB and 94 KB, down from 1.9 MB each. The smaller variants are approximately 24–45 KB. Original PNGs remain available in Git history.
 
 ## SPESIS prompt
 
